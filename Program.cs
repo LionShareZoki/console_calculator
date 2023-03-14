@@ -18,6 +18,7 @@
 
         if (input == "1")
         {
+            // Adition code
             Console.Write("Enter the first operand: ");
             string input1 = Console.ReadLine();
             double firstOperand;
@@ -50,6 +51,7 @@
         }
         else if (input == "2")
         {
+            // Subtraction code
             Console.Write("Enter the first operand: ");
             string input1 = Console.ReadLine();
             double firstOperand;
@@ -82,6 +84,7 @@
         }
         else if (input == "3")
         {
+            // Multiplication code
             Console.Write("Enter the first operand: ");
             string input1 = Console.ReadLine();
             double firstOperand;
@@ -113,6 +116,7 @@
         }
         else if (input == "4")
         {
+            // Division code
             Console.Write("Enter the first operand: ");
             string input1 = Console.ReadLine();
             double firstOperand;
