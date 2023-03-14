@@ -19,35 +19,138 @@
         if (input == "1")
         {
             Console.Write("Enter the first operand: ");
-            double firstOperand = double.Parse(Console.ReadLine());
+            string input1 = Console.ReadLine();
+            double firstOperand;
+            if (input1 == "mem")
+            {
+                firstOperand = memAddSub;
+            }
+            else
+            {
+                firstOperand = double.Parse(input1);
+            }
 
             Console.Write("Enter the second operand: ");
-            double secondOperand = double.Parse(Console.ReadLine());
+            string input2 = Console.ReadLine();
+            double secondOperand;
+            if (input2 == "mem")
+            {
+                secondOperand = memAddSub;
+            }
+            else
+            {
+                secondOperand = double.Parse(input2);
+            }
 
-            double result = firstOperand + secondOperand + memAddSub;
+            double result = firstOperand + secondOperand;
             Console.WriteLine($"Result: {result}");
 
             memAddSub = result;
+            memMulDiv = result;
         }
         else if (input == "2")
         {
-            // Code for Subtraction
+            Console.Write("Enter the first operand: ");
+            string input1 = Console.ReadLine();
+            double firstOperand;
+            if (input1 == "mem")
+            {
+                firstOperand = memAddSub;
+            }
+            else
+            {
+                firstOperand = double.Parse(input1);
+            }
+
+            Console.Write("Enter the second operand: ");
+            string input2 = Console.ReadLine();
+            double secondOperand;
+            if (input2 == "mem")
+            {
+                secondOperand = memAddSub;
+            }
+            else
+            {
+                secondOperand = double.Parse(input2);
+            }
+
+            double result = firstOperand - secondOperand;
+            Console.WriteLine($"Result: {result}");
+            memAddSub = result;
+            memMulDiv = result;
+
         }
         else if (input == "3")
         {
-            // Code for Multiplication
+            Console.Write("Enter the first operand: ");
+            string input1 = Console.ReadLine();
+            double firstOperand;
+            if (input1 == "mem")
+            {
+                firstOperand = memMulDiv;
+            }
+            else
+            {
+                firstOperand = double.Parse(input1);
+            }
+
+            Console.Write("Enter the second operand: ");
+            string input2 = Console.ReadLine();
+            double secondOperand;
+            if (input2 == "mem")
+            {
+                secondOperand = memMulDiv;
+            }
+            else
+            {
+                secondOperand = double.Parse(input2);
+            }
+
+            double result = firstOperand * secondOperand;
+            Console.WriteLine($"Result: {result}");
+            memAddSub = result;
+            memMulDiv = result;
         }
         else if (input == "4")
         {
-            // Code for Division
+            Console.Write("Enter the first operand: ");
+            string input1 = Console.ReadLine();
+            double firstOperand;
+            if (input1 == "mem")
+            {
+                firstOperand = memMulDiv;
+            }
+            else
+            {
+                firstOperand = double.Parse(input1);
+            }
+
+            Console.Write("Enter the second operand: ");
+            string input2 = Console.ReadLine();
+            double secondOperand;
+            if (input2 == "mem")
+            {
+                secondOperand = memMulDiv;
+            }
+            else
+            {
+                secondOperand = double.Parse(input2);
+            }
+
+            double result = firstOperand / secondOperand;
+            Console.WriteLine($"Result: {result}");
+            memAddSub = result;
+            memMulDiv = result;
         }
         else if (input == "5")
         {
-            // Code for Clear memory
+            memAddSub = 0;
+            memMulDiv = 1;
+            Console.WriteLine("Memory clear");
         }
         else if (input == "6")
         {
-            // Code for Exit
+            
             break;
         }
         else
