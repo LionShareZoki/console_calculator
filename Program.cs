@@ -1,4 +1,5 @@
 ﻿{
+     
 
     double memAddSub = 0;
     double memMulDiv = 1;
@@ -13,7 +14,7 @@
 
     Console.Write("Enter your choice: ");
     while (true)
-    {
+    { 
         string input = Console.ReadLine();
 
         if (input == "1")
@@ -44,7 +45,14 @@
             }
 
             double result = firstOperand + secondOperand;
-            Console.WriteLine($"Result: {result}");
+            int decimalPlaces = BitConverter.GetBytes(decimal.GetBits((decimal)result)[3])[2];
+            
+            if (decimalPlaces > 5)
+            {
+                result = Math.Round(result, 5);
+            }
+            Console.WriteLine($"Result: {result:#,0.#####}");
+
 
             memAddSub = result;
             memMulDiv = result;
@@ -77,7 +85,13 @@
             }
 
             double result = firstOperand - secondOperand;
-            Console.WriteLine($"Result: {result}");
+            int decimalPlaces = BitConverter.GetBytes(decimal.GetBits((decimal)result)[3])[2];
+
+            if (decimalPlaces > 5)
+            {
+                result = Math.Round(result, 5);
+            }
+            Console.WriteLine($"Result: {result:#,0.#####}");
             memAddSub = result;
             memMulDiv = result;
 
@@ -110,7 +124,13 @@
             }
 
             double result = firstOperand * secondOperand;
-            Console.WriteLine($"Result: {result}");
+            int decimalPlaces = BitConverter.GetBytes(decimal.GetBits((decimal)result)[3])[2];
+
+            if (decimalPlaces > 5)
+            {
+                result = Math.Round(result, 5);
+            }
+            Console.WriteLine($"Result: {result:#,0.#####}");
             memAddSub = result;
             memMulDiv = result;
         }
@@ -142,7 +162,13 @@
             }
 
             double result = firstOperand / secondOperand;
-            Console.WriteLine($"Result: {result}");
+            int decimalPlaces = BitConverter.GetBytes(decimal.GetBits((decimal)result)[3])[2];
+
+            if (decimalPlaces > 5)
+            {
+                result = Math.Round(result, 5);
+            }
+            Console.WriteLine($"Result: {result:#,0.#####}");
             memAddSub = result;
             memMulDiv = result;
         }
